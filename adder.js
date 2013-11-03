@@ -36,16 +36,16 @@ function adder(){
         
           return function(v){
                 table.forEach(function(func){                                
-                        resultat = resultat + func(v);
+                        resultat += func(v);
                 });                        
-                console.log(resultat);
+                return resultat;
                 
         };
 }
 
 
 
-adder()(1); // 0
-adder(mult(2))(1); // 2
-adder(mult(2), mult(2), mult(2))(1); // 6
-adder(mult(2), sub(2), mult(2))(1); // 5
+console.log(adder()(1)); // 0
+console.log(adder(mult(2))(1)); // 2
+console.log(adder(mult(2), mult(2), mult(2))(1)); // 6
+console.log(adder(mult(2), sub(2), mult(2))(1)); // 5
